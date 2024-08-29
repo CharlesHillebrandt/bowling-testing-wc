@@ -14,7 +14,7 @@ class BowlingGame:
 
         for frameIndex in range(10):
             if frameIndex in range(10):
-                result += self.strikeScore(rollIndex)
+                result += self.strikeScore(rollIndex) #corrected method name for strikeScore()
                 rollIndex +=1
             elif self.isSpare(rollIndex):
                 result += self.spareScore(rollIndex)
@@ -22,13 +22,14 @@ class BowlingGame:
             else:
                 result += self.frameScore(rollIndex)
             rollIndex +=2
-            return result
+        
+        return result #return statement taken out of for loop
         
     def isStrike(self, rollIndex):
         return self.rolls[rollIndex] == 10
     def isSpare(self, rollIndex):
         return self.rolls[rollIndex]+ self.rolls[rollIndex+1]==10
-    def strikeScore(self,rollIndex):
+    def strikeScore(self,rollIndex): #correct typo in method name for strikeScore()
         return 10+ self.rolls[rollIndex+1]+ self.rolls[rollIndex+2]
     
     def spareScore(self,rollIndex):
