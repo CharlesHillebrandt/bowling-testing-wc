@@ -25,15 +25,38 @@ class BowlingGame:
         
         return result #return statement taken out of for loop
         
-    def isStrike(self, rollIndex):
-        return self.rolls[rollIndex] == 10
+    #modified function definitions of... 
+    # ... (5 below) isStrike, isSpare, strikeScore, spareScore, frameScore
+    # ...to check indices exist before accessing them
+
+    def isStrike(self, rollIndex): 
+        return rollIndex < len(self.rolls) and self.rolls[rollIndex] == 10
+
     def isSpare(self, rollIndex):
-        return self.rolls[rollIndex]+ self.rolls[rollIndex+1]==10
-    def strikeScore(self,rollIndex): #correct typo in method name for strikeScore()
-        return 10+ self.rolls[rollIndex+1]+ self.rolls[rollIndex+2]
-    
-    def spareScore(self,rollIndex):
-        return 10+ self.rolls[rollIndex+2]
-    
+        return (
+            rollIndex + 1 < len(self.rolls)
+            and self.rolls[rollIndex] + self.rolls[rollIndex + 1] == 10
+        )
+
+    def strikeScore(self, rollIndex): #correct typo in method name for strikeScore()
+        return (
+            10
+            + self.rolls[rollIndex + 1]
+            + self.rolls[rollIndex + 2]
+            if rollIndex + 2 < len(self.rolls)
+            else 0
+        )
+
+    def spareScore(self, rollIndex):
+        return (
+            10 + self.rolls[rollIndex + 2]
+            if rollIndex + 2 < len(self.rolls)
+            else 0
+        )
+
     def frameScore(self, rollIndex):
-        return self.rolls[rollIndex] + self.rolls[rollIndex + 1]
+        return (
+            self.rolls[rollIndex] + self.rolls[rollIndex + 1]
+            if rollIndex + 1 < len(self.rolls)
+            else 0
+        )
