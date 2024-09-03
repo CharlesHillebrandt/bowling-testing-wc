@@ -7,7 +7,7 @@ class BowlingGame:
 
     def a_roll(self,pins):
         self.rolls_done.append(pins)
-
+ 
     def score(self):
         total_score = 0
         rollIndex=0
