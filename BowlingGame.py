@@ -3,10 +3,10 @@
 #provided in project assessment.
 class BowlingGame:
     def __init__(self):
-        self.rolls=[]
+        self.rolls_done=[]
 
-    def roll(self,pins):
-        self.rolls.append(pins)
+    def a_roll(self,pins):
+        self.rolls_done.append(pins)
 
     def score(self):
         total_score = 0
@@ -30,23 +30,23 @@ class BowlingGame:
     # ...to check indices exist before accessing them
 
     def isStrike(self, rollIndex): 
-        return rollIndex < len(self.rolls) and self.rolls[rollIndex] == 10
+        return rollIndex < len(self.rolls_done) and self.rolls_done[rollIndex] == 10
 
     def isSpare(self, rollIndex):
         return (
-            rollIndex + 1 < len(self.rolls)
-            and self.rolls[rollIndex] + self.rolls[rollIndex + 1] == 10
+            rollIndex + 1 < len(self.rolls_done)
+            and self.rolls_done[rollIndex] + self.rolls_done[rollIndex + 1] == 10
         )
 
     def strikeScore(self, rollIndex):
-       # A strike is 10 + the sum of the next two rolls
-        return 10 + self.rolls[rollIndex + 1] + self.rolls[rollIndex + 2]
+       # A strike is 10 + the sum of the next two rolls_done
+        return 10 + self.rolls_done[rollIndex + 1] + self.rolls_done[rollIndex + 2]
 
     def spareScore(self, rollIndex):
         # A spare is 10 + the next roll
-        return 10 + self.rolls[rollIndex + 2]
+        return 10 + self.rolls_done[rollIndex + 2]
 
     def frameScore(self, rollIndex):
-        # A regular frame is just the sum of two rolls
-        return self.rolls[rollIndex] + self.rolls[rollIndex + 1]
+        # A regular frame is just the sum of two rolls_done
+        return self.rolls_done[rollIndex] + self.rolls_done[rollIndex + 1]
 
