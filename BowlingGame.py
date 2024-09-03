@@ -9,22 +9,22 @@ class BowlingGame:
         self.rolls.append(pins)
 
     def score(self):
-        result = 0
+        total_score = 0
         rollIndex=0
 
         for frameIndex in range(10):
             if self.isStrike(rollIndex): #this if statement was corrected.
-                result += self.strikeScore(rollIndex) #corrected method name for strikeScore()
+                total_score += self.strikeScore(rollIndex) #corrected method name for strikeScore()
                 rollIndex +=1
             elif self.isSpare(rollIndex):
-                result += self.spareScore(rollIndex)
+                total_score += self.spareScore(rollIndex)
                 rollIndex +=2
             else:
-                result += self.frameScore(rollIndex)
+                total_score += self.frameScore(rollIndex)
                 rollIndex +=2 #indented this line of code so that its included in the else condition
         
-        return result #return statement taken out of for loop
-        
+        return total_score #return statement taken out of for loop
+
     #modified function definitions of... 
     # ... (5 below) isStrike, isSpare, strikeScore, spareScore, frameScore
     # ...to check indices exist before accessing them
