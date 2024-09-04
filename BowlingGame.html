@@ -37,21 +37,69 @@
 #provided&nbsp;in&nbsp;project&nbsp;assessment.<br>&nbsp;</span></td></tr>
 <tr><td>&nbsp;</td>
 <td class="singlecolumn">Methods defined here:<br>
-<dl><dt><a name="BowlingGame-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+<dl><dt><a name="BowlingGame-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">This&nbsp;constructor&nbsp;initializes&nbsp;self&nbsp;aka&nbsp;the&nbsp;<a href="#BowlingGame">BowlingGame</a>&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Args:<br>
+self(<a href="#BowlingGame">BowlingGame</a>):&nbsp;the&nbsp;<a href="#BowlingGame">BowlingGame</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;initalize</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-frameScore"><strong>frameScore</strong></a>(self, rollIndex)</dt></dl>
+<dl><dt><a name="BowlingGame-calculateFrameScore"><strong>calculateFrameScore</strong></a>(self, rollIndex)</dt><dd><span class="code">This&nbsp;function&nbsp;calculates&nbsp;the&nbsp;frame&nbsp;score&nbsp;and&nbsp;returns&nbsp;the&nbsp;result<br>
+&nbsp;<br>
+Args:<br>
+self(<a href="#BowlingGame">BowlingGame</a>):&nbsp;the&nbsp;<a href="#BowlingGame">BowlingGame</a>&nbsp;<a href="builtins.html#object">object</a><br>
+rollIndex(int):&nbsp;index&nbsp;of&nbsp;frame&nbsp;to&nbsp;calculate&nbsp;score&nbsp;of<br>
+&nbsp;<br>
+Returns:<br>
+int:&nbsp;score&nbsp;of&nbsp;frame</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-isSpare"><strong>isSpare</strong></a>(self, rollIndex)</dt></dl>
+<dl><dt><a name="BowlingGame-calculateSpareScore"><strong>calculateSpareScore</strong></a>(self, rollIndex)</dt><dd><span class="code">This&nbsp;function&nbsp;calculates&nbsp;the&nbsp;spare&nbsp;score&nbsp;and&nbsp;returns&nbsp;the&nbsp;result<br>
+&nbsp;<br>
+Args:<br>
+self(<a href="#BowlingGame">BowlingGame</a>):&nbsp;the&nbsp;<a href="#BowlingGame">BowlingGame</a>&nbsp;<a href="builtins.html#object">object</a><br>
+rollIndex(int):&nbsp;index&nbsp;of&nbsp;spare&nbsp;to&nbsp;calculate&nbsp;score&nbsp;of<br>
+&nbsp;<br>
+Returns:<br>
+int:&nbsp;score&nbsp;of&nbsp;spare</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-isStrike"><strong>isStrike</strong></a>(self, rollIndex)</dt></dl>
+<dl><dt><a name="BowlingGame-calculateStrikeScore"><strong>calculateStrikeScore</strong></a>(self, rollIndex)</dt><dd><span class="code">This&nbsp;function&nbsp;calculates&nbsp;the&nbsp;strike&nbsp;score&nbsp;and&nbsp;returns&nbsp;the&nbsp;result<br>
+&nbsp;<br>
+Args:<br>
+self(<a href="#BowlingGame">BowlingGame</a>):&nbsp;the&nbsp;<a href="#BowlingGame">BowlingGame</a>&nbsp;<a href="builtins.html#object">object</a><br>
+rollIndex(int):&nbsp;index&nbsp;of&nbsp;strike&nbsp;to&nbsp;calculate&nbsp;score&nbsp;of<br>
+&nbsp;<br>
+Returns:<br>
+int:&nbsp;score&nbsp;of&nbsp;strike</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-roll"><strong>roll</strong></a>(self, pins)</dt></dl>
+<dl><dt><a name="BowlingGame-calculate_score"><strong>calculate_score</strong></a>(self)</dt><dd><span class="code">This&nbsp;function&nbsp;calculates&nbsp;the&nbsp;total&nbsp;score&nbsp;of&nbsp;the&nbsp;entire&nbsp;bowling&nbsp;game<br>
+&nbsp;<br>
+Args:<br>
+self(<a href="#BowlingGame">BowlingGame</a>):&nbsp;the&nbsp;<a href="#BowlingGame">BowlingGame</a>&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Returns:<br>
+int:&nbsp;total&nbsp;score&nbsp;of&nbsp;the&nbsp;bowling&nbsp;game</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-score"><strong>score</strong></a>(self)</dt></dl>
+<dl><dt><a name="BowlingGame-isSpare"><strong>isSpare</strong></a>(self, rollIndex)</dt><dd><span class="code">This&nbsp;function&nbsp;returns&nbsp;a&nbsp;boolean&nbsp;of&nbsp;whether&nbsp;the&nbsp;specified&nbsp;frame&nbsp;is&nbsp;a&nbsp;spare<br>
+&nbsp;<br>
+Args:<br>
+self(<a href="#BowlingGame">BowlingGame</a>):&nbsp;the&nbsp;<a href="#BowlingGame">BowlingGame</a>&nbsp;<a href="builtins.html#object">object</a><br>
+rollIndex(int):&nbsp;index&nbsp;of&nbsp;frame&nbsp;to&nbsp;check&nbsp;for&nbsp;spare<br>
+&nbsp;<br>
+Returns:<br>
+boolean:&nbsp;whether&nbsp;frame&nbsp;is&nbsp;a&nbsp;spare</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-spareScore"><strong>spareScore</strong></a>(self, rollIndex)</dt></dl>
+<dl><dt><a name="BowlingGame-isStrike"><strong>isStrike</strong></a>(self, rollIndex)</dt><dd><span class="code">This&nbsp;function&nbsp;returns&nbsp;a&nbsp;boolean&nbsp;of&nbsp;whether&nbsp;the&nbsp;specified&nbsp;roll&nbsp;is&nbsp;a&nbsp;strike<br>
+&nbsp;<br>
+Args:<br>
+self(<a href="#BowlingGame">BowlingGame</a>):&nbsp;the&nbsp;<a href="#BowlingGame">BowlingGame</a>&nbsp;<a href="builtins.html#object">object</a><br>
+rollIndex(int):&nbsp;index&nbsp;of&nbsp;roll&nbsp;to&nbsp;check&nbsp;for&nbsp;strike<br>
+&nbsp;<br>
+Returns:<br>
+boolean:&nbsp;whether&nbsp;roll&nbsp;is&nbsp;a&nbsp;strike</span></dd></dl>
 
-<dl><dt><a name="BowlingGame-strikeScore"><strong>strikeScore</strong></a>(self, rollIndex)</dt></dl>
+<dl><dt><a name="BowlingGame-record_roll"><strong>record_roll</strong></a>(self, pins)</dt><dd><span class="code">This&nbsp;function&nbsp;records&nbsp;a&nbsp;passed&nbsp;in&nbsp;roll&nbsp;into&nbsp;the&nbsp;rolls_done&nbsp;array<br>
+&nbsp;<br>
+Args:<br>
+self(<a href="#BowlingGame">BowlingGame</a>):&nbsp;the&nbsp;<a href="#BowlingGame">BowlingGame</a>&nbsp;<a href="builtins.html#object">object</a><br>
+pins(int):&nbsp;number&nbsp;of&nbsp;pins&nbsp;knocked&nbsp;down&nbsp;in&nbsp;roll</span></dd></dl>
 
 <hr>
 Data descriptors defined here:<br>
