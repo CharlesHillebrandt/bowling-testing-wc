@@ -5,10 +5,12 @@ class BowlingGame:
     def __init__(self):
         self.rolls_done=[]
 
+    #changed method name from roll() to record_roll()
     def record_roll(self,pins):
         self.rolls_done.append(pins)
 
-    def score(self):
+    #changed method name from score() to calculate_score()
+    def calculate_score(self):
         total_score = 0
         rollIndex=0
 
@@ -24,10 +26,6 @@ class BowlingGame:
                 rollIndex +=2 #indented this line of code so that its included in the else condition
         
         return total_score #return statement taken out of for loop
-
-    #modified function definitions of... 
-    # ... (5 below) isStrike, isSpare, strikeScore, spareScore, frameScore
-    # ...to check indices exist before accessing them
 
     def isStrike(self, rollIndex): 
         return rollIndex < len(self.rolls_done) and self.rolls_done[rollIndex] == 10
