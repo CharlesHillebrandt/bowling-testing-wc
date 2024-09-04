@@ -5,9 +5,9 @@ class BowlingGame:
     def __init__(self):
         self.rolls_done=[]
 
-    def a_roll(self,pins):
+    def record_roll(self,pins):
         self.rolls_done.append(pins)
- 
+
     def score(self):
         total_score = 0
         rollIndex=0
