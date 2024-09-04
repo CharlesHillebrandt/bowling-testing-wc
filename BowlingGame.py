@@ -16,13 +16,13 @@ class BowlingGame:
 
         for frameIndex in range(10):
             if self.isStrike(rollIndex): #this if statement was corrected.
-                total_score += self.strikeScore(rollIndex) #corrected method name for strikeScore()
+                total_score += self.calculateStrikeScore(rollIndex) #corrected method name for strikeScore()
                 rollIndex +=1
             elif self.isSpare(rollIndex):
-                total_score += self.spareScore(rollIndex)
+                total_score += self.calculateSpareScore(rollIndex)
                 rollIndex +=2
             else:
-                total_score += self.frameScore(rollIndex)
+                total_score += self.calculateFrameScore(rollIndex)
                 rollIndex +=2 #indented this line of code so that its included in the else condition
         
         return total_score #return statement taken out of for loop
@@ -36,15 +36,15 @@ class BowlingGame:
             and self.rolls_done[rollIndex] + self.rolls_done[rollIndex + 1] == 10
         )
 
-    def strikeScore(self, rollIndex):
-       # A strike is 10 + the sum of the next two rolls_done
+    def calculateStrikeScore(self, rollIndex):
+       # A strike is 10 + the sum of the next two rolls
         return 10 + self.rolls_done[rollIndex + 1] + self.rolls_done[rollIndex + 2]
 
-    def spareScore(self, rollIndex):
+    def calculateSpareScore(self, rollIndex):
         # A spare is 10 + the next roll
         return 10 + self.rolls_done[rollIndex + 2]
 
-    def frameScore(self, rollIndex):
-        # A regular frame is just the sum of two rolls_done
+    def calculateFrameScore(self, rollIndex):
+        # A regular frame is just the sum of two rolls
         return self.rolls_done[rollIndex] + self.rolls_done[rollIndex + 1]
 
