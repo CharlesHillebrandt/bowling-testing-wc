@@ -113,7 +113,7 @@ class BowlingGame:
 
     def calculateSpareScore(self, rollIndex):
         """
-        This function calculates the spare score and returns the result
+        This function calculates the spare score and returns the result.
 
         Args:
         self(BowlingGame): the BowlingGame object
@@ -122,8 +122,16 @@ class BowlingGame:
         Returns:
         int: score of spare
         """
-        # A spare is 10 + the next roll
-        return 10 + self.rolls_done[rollIndex + 2]
+        # Base score for a spare is 10
+        spare_score = 10
+
+        # Check if there is a roll after the spare
+        if rollIndex + 2 < len(self.rolls_done):
+            spare_score += self.rolls_done[rollIndex + 2]
+        
+        # Return the calculated score
+        return spare_score
+
 
     def calculateFrameScore(self, rollIndex):
         """

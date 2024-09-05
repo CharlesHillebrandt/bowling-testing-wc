@@ -45,6 +45,11 @@ class TestBowlingGame(unittest.TestCase):
 
     #THE FOLLOWING TEST CASES WERE WRITTEN BY ME
 
+    def testSpareWithoutBonusRoll(self):
+        self.game.record_roll(5)
+        self.game.record_roll(5)
+        assert self.game.calculate_score() == 10 #should handle early terminated of game
+
     def testOneRollAfterStrike(self):
         self.game.record_roll(10)
         self.game.record_roll(5)
