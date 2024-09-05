@@ -35,21 +35,26 @@ class BowlingGame:
         int: total score of the bowling game
         """
         total_score = 0
-        rollIndex=0
+        rollIndex = 0
 
-        #iterate through rolls_done array and tally total score of bowling game
+        # Iterate through rolls_done array and tally total score of bowling game
         for frameIndex in range(10):
-            if self.isStrike(rollIndex): #this if statement was corrected.
-                total_score += self.calculateStrikeScore(rollIndex) #corrected method name for strikeScore()
-                rollIndex +=1
-            elif self.isSpare(rollIndex):
-                total_score += self.calculateSpareScore(rollIndex)
-                rollIndex +=2
-            else:
-                total_score += self.calculateFrameScore(rollIndex)
-                rollIndex +=2 #indented this line of code so that its included in the else condition
-        
-        return total_score #return statement taken out of for loop
+            try:
+                if self.isStrike(rollIndex):  # this if statement was corrected
+                    total_score += self.calculateStrikeScore(rollIndex)  # corrected method name for strikeScore()
+                    rollIndex += 1
+                elif self.isSpare(rollIndex):
+                    total_score += self.calculateSpareScore(rollIndex)
+                    rollIndex += 2
+                else:
+                    total_score += self.calculateFrameScore(rollIndex)
+                    rollIndex += 2  # indented this line of code so that it's included in the else condition
+            except IndexError:
+                # Handle the case where rollIndex is out of bounds
+                print(f"Error: rollIndex {rollIndex} is out of bounds.")
+                break  # Exit the loop if an IndexError occurs
+    
+        return total_score  # return statement taken out of the for loop
 
     def isStrike(self, rollIndex):
         """
@@ -82,7 +87,7 @@ class BowlingGame:
 
     def calculateStrikeScore(self, rollIndex):
         """
-        This function calculates the strike score and returns the result
+        This function calculates the strike score and returns the result.
 
         Args:
         self(BowlingGame): the BowlingGame object
@@ -91,8 +96,20 @@ class BowlingGame:
         Returns:
         int: score of strike
         """
-       # A strike is 10 + the sum of the next two rolls
-        return 10 + self.rolls_done[rollIndex + 1] + self.rolls_done[rollIndex + 2]
+        # Base score for a strike is 10
+        strike_score = 10
+
+        # Check if there is at least one roll after the strike
+        if rollIndex + 1 < len(self.rolls_done):
+            strike_score += self.rolls_done[rollIndex + 1]
+        
+            # Check if there is a second roll after the strike
+            if rollIndex + 2 < len(self.rolls_done):
+                strike_score += self.rolls_done[rollIndex + 2]
+            
+        # Return the calculated score
+        return strike_score
+
 
     def calculateSpareScore(self, rollIndex):
         """
