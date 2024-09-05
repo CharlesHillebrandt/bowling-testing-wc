@@ -135,7 +135,7 @@ class BowlingGame:
 
     def calculateFrameScore(self, rollIndex):
         """
-        This function calculates the frame score and returns the result
+        This function calculates the frame score and returns the result.
 
         Args:
         self(BowlingGame): the BowlingGame object
@@ -144,5 +144,12 @@ class BowlingGame:
         Returns:
         int: score of frame
         """
-        # A regular frame is just the sum of two rolls
-        return self.rolls_done[rollIndex] + self.rolls_done[rollIndex + 1]
+        #Initialize the frame score with the first roll
+        frame_score = self.rolls_done[rollIndex]
+
+        # Check if there is a second roll in the frame
+        if rollIndex + 1 < len(self.rolls_done):
+            frame_score += self.rolls_done[rollIndex + 1]
+        
+        # Return the calculated frame score
+        return frame_score
