@@ -38,7 +38,8 @@ class BowlingGame:
         rollIndex = 0
 
         # Adding the try and except statement was my idea to refactor this code,
-        # but ChatGPT wrote the code.
+        # but ChatGPT wrote the modified code you see here.
+        # This try and except statement catches errors of accessing an index out of bounds
 
         # Iterate through rolls_done array and tally total score of bowling game
         for frameIndex in range(10):
@@ -100,8 +101,11 @@ class BowlingGame:
         int: score of strike
         """
 
-        #the rest of this function was produced by a ChatGPT
-        #prompt, however the idea behind it was mine.
+        #ChatGPT wrote this code for me after I prompted it asking
+        #to add an if else chain to ensure that indexes
+        #are only accessed if they exist when attempting to add
+        #bonus rolls on to strike score
+
         # Base score for a strike is 10
         strike_score = 10
 
@@ -129,9 +133,9 @@ class BowlingGame:
         int: score of spare
         """
 
-        #the rest of this function was produced by a ChatGPT
-        #prompt, however the idea behind it was mine.
-        # Base score for a spare is 10
+        #ChatGPT wrote this code for me after I prompted it asking
+        #to add an if statement to check that a roll exists
+        #after the spare before accessing the index
         spare_score = 10
 
         # Check if there is a roll after the spare
@@ -154,9 +158,9 @@ class BowlingGame:
         int: score of frame
         """
 
-        #the rest of this function was produced by a ChatGPT
-        #prompt, however the idea behind it was mine.
-        #Initialize the frame score with the first roll
+        #ChatGPT wrote this code for me after I prompted it asking
+        #to add an if statement to check that the second roll
+        #exists in the frame before accessing the index
         frame_score = self.rolls_done[rollIndex]
 
         # Check if there is a second roll in the frame
