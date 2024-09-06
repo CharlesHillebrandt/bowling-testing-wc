@@ -37,6 +37,9 @@ class BowlingGame:
         total_score = 0
         rollIndex = 0
 
+        # Adding the try and except statement was my idea to refactor this code,
+        # but ChatGPT wrote the code.
+
         # Iterate through rolls_done array and tally total score of bowling game
         for frameIndex in range(10):
             try:
@@ -96,6 +99,9 @@ class BowlingGame:
         Returns:
         int: score of strike
         """
+
+        #the rest of this function was produced by a ChatGPT
+        #prompt, however the idea behind it was mine.
         # Base score for a strike is 10
         strike_score = 10
 
@@ -122,6 +128,9 @@ class BowlingGame:
         Returns:
         int: score of spare
         """
+
+        #the rest of this function was produced by a ChatGPT
+        #prompt, however the idea behind it was mine.
         # Base score for a spare is 10
         spare_score = 10
 
@@ -144,6 +153,9 @@ class BowlingGame:
         Returns:
         int: score of frame
         """
+
+        #the rest of this function was produced by a ChatGPT
+        #prompt, however the idea behind it was mine.
         #Initialize the frame score with the first roll
         frame_score = self.rolls_done[rollIndex]
 
